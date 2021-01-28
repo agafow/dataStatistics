@@ -1,0 +1,25 @@
+Exercise 6. Multiple plots of se versus p
+Using the same code as in the previous exercise, create a for-loop that generates three plots of p versus se when the sample 
+sizes equal N = 25,N = 100 , and N = 1000 .
+
+#Q
+
+Your for-loop should contain two lines of code to be repeated for three different values of N.
+The first line within the for-loop should use the sqrt function to generate a vector of standard errors se for all values of p.
+The second line within the for-loop should use the plot function to generate a plot with p on the x-axis and se on the y-axis.
+Use the ylim argument to keep the y-axis limits constant across all three plots. The lower limit should be equal to 0 and the upper limit should equal 0.1 (it can be shown that this value is the highest calculated standard error across all values of p and N).
+
+
+#Answer
+
+# The vector `p` contains 100 proportions of Democrats ranging from 0 to 1 using the `seq` function
+p <- seq(0, 1, length = 100)
+
+# The vector `sample_sizes` contains the three sample sizes
+sample_sizes <- c(25, 100, 1000)
+
+# Write a for-loop that calculates the standard error `se` for every value of `p` for each of the three samples sizes `N` in the vector `sample_sizes`. Plot the three graphs, using the `ylim` argument to standardize the y-axis across all three plots.
+for(N in sample_sizes){
+  se <- sqrt(p*(1-p)/N)
+  plot(p, se, ylim = c(0,0.5/sqrt(25)))
+}

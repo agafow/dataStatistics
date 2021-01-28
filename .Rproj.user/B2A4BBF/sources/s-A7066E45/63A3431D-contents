@@ -1,0 +1,20 @@
+Exercise 9. Standard error of the spread
+Say the actual proportion of Democratic voters is P = 0.45 . In this case, the Republican party is winning by a relatively large margin of  d = -0.1, or a 10% margin of victory. What is the standard error of the spread  2x-1
+ in this case?
+ 
+ #Q
+ Use the sqrt function to calculate the standard error of the spread 
+2x -1.
+
+#Answer
+
+
+# `N` represents the number of people polled
+N <- 25
+
+# `p` represents the proportion of Democratic voters
+p <- 0.45
+
+# Calculate the standard error of the spread. Print this value to the console.
+
+2*sqrt(p*(1-p)/N)
